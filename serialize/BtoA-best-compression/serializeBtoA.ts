@@ -17,16 +17,6 @@ export function deserializeList(serialized: string): number[] {
     return lst;
 }
 
-const numbers = [99, 99, 1, 44, 1, 2, 2, 300, 90, 3, 3];
-const s = serializeList(numbers);
-console.log(s);
-const numbers2 = deserializeList(s);
-console.log(numbers2); // [99, 99, 1, 44, 1, 2, 2, 300, 90, 3, 3]
-
-const threeDigitNumbers = Array.from({ length: 1000 }, () =>
-    Math.floor(Math.random() * 299) + 100
-);
-
 
 // функция для сравнения размера полученных данных
 export const compare = (arr: number[], serialized: string) => {
@@ -36,5 +26,3 @@ export const compare = (arr: number[], serialized: string) => {
     console.log('serializedBlob', serializedBlob);
     console.log(serializedBlob / arrStringyfiedBlob * 100);
 }
-
-compare(threeDigitNumbers, serializeList(threeDigitNumbers));
